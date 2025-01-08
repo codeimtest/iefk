@@ -119,7 +119,20 @@
 
 /* sm <= Medium (md) */
 @media (max-width : 768px) {
-
+	.popup .popup_dialog .popup_wrap{
+		padding: 24px 16px;
+	}
+	.popup_wrap .three{
+		font-size: 20px;
+	}
+	.popup .btn_close{
+		position: relative;
+		top: -6px;
+		right: 0;
+	}
+	.form_group input, .form_group textarea{
+		padding: 8px 20px;
+	}
 }
 
 /* xs <= Small (sm) */
@@ -159,6 +172,9 @@
 	}
 	header .logo img{
 		max-width: 240px;
+	}
+	.partners_carousel .swiper-slide img{
+		padding: 4px 0;
 	}
 }
 

@@ -9,6 +9,24 @@ $('.aside_overlay').click(function(){
 $('aside ul li a').click(function(){
 	$('.menu_button,aside').removeClass('active')
 })
+// popup
+$('.contact').click(function(e){
+	e.preventDefault();
+	$('.for_contact').addClass('active')
+	$('body').addClass('lock')
+})
+$('.btn_close').click(function(){
+	$('.popup').removeClass('active');
+	$('body').removeClass('lock')
+})
+//click on outside popup
+$(document).mouseup(function (e) {
+	var container = $(".popup_dialog");
+	if (container.has(e.target).length === 0) {
+		$('.popup').removeClass('active');
+		$('body').removeClass('lock');
+	}
+});
 var swiper = new Swiper(".partners_carousel", {
 	slidesPerView: 2.3,
 	loop: true,

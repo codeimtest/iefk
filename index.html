@@ -52,7 +52,7 @@
 						<button class="menu_button d-lg-none d-block">
 							<span></span>
 						</button>
-						<a href="#contact" class="btn d-none d-lg-inline">
+						<a href="#" class="btn d-none d-lg-inline contact">
 							Напишите нам
 							<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<g clip-path="url(#clip0_50_367)">
@@ -91,7 +91,7 @@
 							<p class="mb-4">Мы обеспечиваем поставки качественных и востребованных медицинских препаратов из Европы на российский рынок, сотрудничая с мировыми лидерами фармацевтической отрасли.</p>
 							<div class="btn_group d-flex align-items-center flex-sm-row flex-column">
 								<a href="#" class="btn white_btn">Узнать больше</a>
-								<a href="#contact" class="btn">
+								<a href="#" class="btn contact">
 									Напишите нам
 									<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_50_367)">
@@ -394,7 +394,38 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popup"></div>
+		<div class="popup for_contact">
+			<div class="popup_dialog">
+				<div class="popup_wrap radius">
+					<div class="preloader" style="display: none;">
+						<div class="preloader-container">
+							<span class="animated-preloader"></span>
+						</div>
+					</div>
+					<div class="d-flex justify-content-between mb-4 mb-lg-5">
+						<div class="three popup_output_text">Оставить заявку</div>
+						<div class="btn_close lk_btn">
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13 1L1 13M1 1L13 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</div>
+					</div>
+					<form>
+						<input type="hidden" name="recaptcha_response" class="recaptchaResponse">
+						<div class="form_group">
+							<label for="name-p">Ваше имя</label>
+							<input type="text" name="name" id="name-p" placeholder="" required="">
+						</div>
+						<div class="form_group">
+							<label for="phone-p">Номер телефона</label>
+							<input type="text" name="phone" class="phone" id="phone-p" placeholder="" required="">
+						</div>
+						<button class="btn black_btn mt-lg-5 mt-4" style="width: 100%">Отправить</button>
+						<div class="sm_text mt-lg-4 mt-3 mb_text light_text">Нажимая кнопку вы даете соглашение на обработку персональных данных  и соглашаетесь с <a href="#" target="_blank" style="color: var(--text);">политикой конфиденциальности</a></div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 	
 </body>
