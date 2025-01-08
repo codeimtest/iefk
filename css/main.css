@@ -1,0 +1,444 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	--accent: #1B517A;
+	--blue: #C9E3F5;
+	--pink: #FFE9E7;
+	--purple: #C9CCF5;
+	--yellow: #FFF1E2;
+	--text: #111827;
+	--gray: #F9F9F9;
+	--alt_gray: rgba(17, 24, 39, 0.08);
+	--regular-text: 18px;
+	--lineheight: 1.4;
+	--userfont: Avenyr Next, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+	--regular: 400;
+	--medium: 500;
+	--bold: 700;
+	--sm: 14px;
+	--nm: 16px;
+	--md: 18px;
+	--radius: 40px;
+	--index: calc(1vw + 1vh);
+	--sg0-space-sm: 1.125rem;
+	--sg0-space-md: 2rem;
+	--transition: ease all 0.2s;
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
+.row, .row > * { --bs-gutter-x: 1.25rem; }
+
+/* FONTS LOAD SECTION */
+
+@font-face { src: url("../fonts/AvenirNextCyr-Regular.woff2") format("woff2"); font-family: "Avenyr Next"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/AvenirNextCyr-Medium.woff2") format("woff2"); font-family: "Avenyr Next"; font-weight: 500; font-style: normal; }
+@font-face { src: url("../fonts/AvenirNextCyr-Bold.woff2") format("woff2"); font-family: "Avenyr Next"; font-weight: 700; font-style: normal; }
+
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder { color: #666; }
+::selection { background-color: var(--accent); color: #fff; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+body {
+	font-family: var(--userfont);
+	font-size: var(--regular-text);
+	line-height: var(--lineheight);
+	color: var(--text);
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+html, body {
+	height: 100%;
+}
+
+.app{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+main {
+	flex: 1 1 auto;
+}
+a{
+	color: var(--text);
+	text-decoration: underline;
+}
+section{
+	padding-top: 110px;
+	padding-bottom: 110px;
+}
+button{
+	border: none;
+}
+.radius{
+	border-radius: var(--radius);
+}
+.relative{
+	position: relative;
+}
+/* TEXT */
+.sm_text{
+	font-size: var(--sm);
+}
+.nm_text{
+	font-size: var(--nm);
+}
+.md_text{
+	font-size: var(--md);
+}
+.fw_n{
+	font-weight: var(--regular);
+}
+.fw_m{
+	font-weight: var(--medium);
+}
+.fw_b{
+	font-weight: var(--bold);
+}
+h1,.one,h2,.two,h3,.three,h4,.four,h5,.five{
+	font-weight: 700;
+}
+h1,.one{
+	font-size: 60px;
+}
+h2,.two{
+	font-size: 40px;
+}
+h3,.three{
+	font-size: 32px;
+}
+h4,.four{
+	font-size: 26px;
+}
+h5,.five{
+	font-size: 20px;
+}
+.text_center{
+	text-align: center;
+}
+
+/* COLORS AND BACKGROUNDS */
+.bg_blue{
+	background: var(--blue);
+}
+.bg_pink{
+	background: var(--pink);
+}
+.bg_yellow{
+	background: var(--yellow);
+}
+.bg_purple{
+	background: var(--purple);
+}
+.bg_gray{
+	background: var(--gray);
+}
+.bg_map{
+	position: relative;
+	z-index: 1;
+}
+.bg_map::before{
+	content: '';
+	background: url('../images/map.svg') no-repeat center right;
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-size: contain;
+}
+.bg_map::after{
+	content: '';
+	background: url('../images/layer.png') no-repeat left bottom;
+	position: absolute;
+	left: 40px;
+	bottom: 20px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+/* BUTTONS */
+.btn{
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	background: var(--accent);
+	font-size: 16px;
+	border-radius: var(--radius);
+	color: #fff;
+	padding: 12px 16px;
+	font-weight: var(--medium);
+}
+.btn.white_btn{
+	background: #fff;
+	color: var(--text);
+}
+.btn.black_btn{
+	background: var(--text);
+	color: #fff;
+}
+.btn_group * + *{
+	margin-left: 18px;
+}
+
+/* MAIN */
+header{
+	background: #fff;
+	padding: 12px 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 12;
+	border-bottom: 1px solid #E8E8E8;
+}
+header ul{
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+header ul li + *{
+	margin-left: 20px;
+}
+header ul li a{
+	color: var(--text);
+	text-decoration: none;
+	font-weight: var(--medium);
+	font-size: 14px;
+}
+.menu_button{
+	position: relative;
+	z-index: 99;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--ld_dark);
+}
+.menu_button::before,.menu_button::after{
+	content: '';
+	width: 24px;
+	height: 2px;
+	border-radius: 20px;
+	background: var(--text);
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	transition: var(--transition);
+}
+.menu_button::before{
+	top: 14px;
+}
+.menu_button::after{
+	bottom: 14px;
+}
+.menu_button.active::before{
+	top: 18px;
+	bottom: auto;
+	transform: rotate(-45deg);
+}
+.menu_button.active::after{
+	top: auto;
+	bottom: 20px;
+	transform: rotate(45deg);
+}
+
+aside{
+	transition: var(--transition);
+	position: fixed;
+	width: 100%;
+	top: -40%;
+	left: 0;
+	background: var(--accent);
+	padding-top: 100px;
+	padding-bottom: 20px;
+	min-height: 354px;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 11;
+	max-height: 100%;
+	overflow: auto;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+.aside_overlay{
+	display: none;
+	z-index: -1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	opacity: 0;
+}
+aside.active .aside_overlay{
+	display: block;
+}
+.first_screen{
+	min-height: 550px;
+}
+.icon{
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	background: var(--alt_gray);
+}
+/* CARDS GSAP */
+.card + *{
+	margin-top: 20px;
+}
+.stack-cards{
+	--stack-cards-gap: var(--sg0-space-sm);
+  --stack-cards-item-ratio: 2/1;
+	position: sticky;
+	top: 120px;
+	scroll-margin-top: 1200px;
+}
+.card{
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(20px + 80px);
+  padding-top: 110px;
+	padding-bottom: 110px;
+	padding-right: 80px;
+	padding-left: 80px;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+					
+}
+.card_wrapper{
+	position: sticky;
+	top: 100px;
+}
+.card_wrapper span:last-of-type{
+	position: relative;
+	padding-left: 90px;
+	margin-left: 12px;
+}
+.card_wrapper span:last-of-type::before{
+	content: '';
+	height: 2px;
+	background: #000;
+	max-width: 72px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.card_wrapper > div > div:first-child{
+	max-width: 536px;
+}
+.form_section_wrap{
+	z-index: 1;
+	overflow: hidden;
+}
+.form_section{
+	padding: 120px 0;
+	max-width: 720px;
+	width: 100%;
+	margin: 0 auto;
+}
+.form_group + *{
+	margin-top: 40px;
+}
+.form_group input,.form_group textarea{
+	background: #fff;
+	color: var(--text);
+	font-size: 16px;
+	border-radius: 28px;
+	width: 100%;
+	padding: 16px 24px;
+	border: none;
+	outline: none;
+	resize: none;
+}
+.form_group label{
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: var(--medium);
+}
+section form button + *{
+	margin-left: 30px;
+}
+.layer_form::before,.layer_form::after,.layer_form_alt::after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.layer_form::before{
+	background: url('../images/layer_form_1.svg') no-repeat right bottom;
+	right: 0;
+	bottom: 0;
+	background-position-x: 96%;
+}
+.layer_form::after{
+	background: url('../images/layer_form_2.svg') no-repeat left top;
+	background-position-y: 26%;
+}
+.layer_form_alt::after{
+	background: url('../images/layer_form_3.svg') no-repeat right top;
+	background-position-y: 6%;
+	background-position-x: 96%;
+}
+.partners_carousel{
+	overflow: hidden;
+}
+.partners_carousel .swiper-slide{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: initial;
+}
+.partners_carousel .swiper-slide img{
+	object-fit: contain;
+padding: 30px 0;
+max-width: 130px;
+}
+/* FOOTER */
+footer{
+	border-top: 1px solid #E8E8E8;
+	margin-top: 40px;
+	padding: 20px 0;
+}
+footer svg{
+	width: 18px;
+	height: 18px;
+}
+footer .social a + *{
+	margin-left: 20px;
+}
+footer .footer_links a{
+	text-decoration: none;
+	position: relative;
+	color: rgba(17, 24, 39, 0.8);
+}
+footer .footer_links a + *{
+	padding-left: 16px;
+	margin-left: 10px;
+}
+footer .footer_links a + *::after{
+	content: '/';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+/* USER STYLES */
+
