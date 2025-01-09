@@ -214,3 +214,25 @@
 		font-size: 22px;
 	}
 }
+
+@media (hover: none){
+	a:active{
+		opacity: 0.8;
+	}
+	.white_btn:active{
+		background: var(--text);
+		color: #fff;
+		opacity: 1;
+	}
+}
+
+@media (hover: hover) {
+	a:hover{
+		opacity: 0.8;
+	}
+	.white_btn:hover{
+		background: var(--text);
+		color: #fff;
+		opacity: 1;
+	}
+}

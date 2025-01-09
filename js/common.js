@@ -1,3 +1,7 @@
+$(window).on('load', function() { // makes sure the whole site is loaded 
+	$('body').css('overflow','visible');
+	$('#preloader').delay(700).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+})
 $(".phone").mask("+7 (999) 999-99-99");
 $('.menu_button').click(function(){
 	$(this).toggleClass('active');
